@@ -1,5 +1,6 @@
 #include "sqlite_interface.hh"
 
+namespace db {
 template <>
 SqliteErr SqliteDb<std::vector<std::string>>::exec(
     SqlOp op, std::string sql_exp, std::vector<std::string> *res_container) {
@@ -18,3 +19,4 @@ SqliteErr SqliteDb<std::vector<std::string>>::exec(
   }
   return SqliteErr::kOk;
 }
+} // namespace db

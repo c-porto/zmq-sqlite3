@@ -16,6 +16,7 @@ add_executable(${this} main.cc ${SRC_FILES})
 add_compile_options(-Wall -Wpedantic -O3)
 
 target_include_directories(${this} INTERFACE ${CMAKE_SOURCE_DIR})
+target_include_directories(${this} INTERFACE ${CMAKE_SOURCE_DIR}/src)
 
 target_link_libraries(${this} cppzmq)
 
