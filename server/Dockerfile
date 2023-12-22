@@ -18,5 +18,5 @@ COPY . .
 RUN cmake -S . -Bbuild 
 RUN cmake --build build
 ENTRYPOINT [ "build/zmqserver" ]
-EXPOSE 3000
+EXPOSE 42068
 

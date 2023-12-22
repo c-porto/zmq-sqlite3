@@ -1,6 +1,8 @@
 #include <iostream>
+#include <memory>
 #include <thread>
 #include <zmq.hpp>
+#include <sqlite3.h>
 
 
 int main (int argc, char *argv[]) {
@@ -9,7 +11,7 @@ int main (int argc, char *argv[]) {
 
     zmq::socket_t socket{ctx,zmq::socket_type::rep};
 
-    socket.bind("tcp://0.0.0.0:3000");
+    socket.bind("tcp://0.0.0.0:42068");
 
     while(true) {
         zmq::message_t rq;

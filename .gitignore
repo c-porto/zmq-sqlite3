@@ -34,3 +34,4 @@
 # Remove Cmake & clangd stuff
 **/build
 **/.cache
+**/compile_commands.json

@@ -12,7 +12,7 @@ int main (int argc, char *argv[]) {
     socket.connect("tcp://0.0.0.0:3000");
 
     for(int i{0}; i < 10;++i) {
-        zmq::message_t request{"EAE",3};
+        zmq::message_t request{"EAE",std::strlen("EAE")};
 
         std::puts("Sending EAE\n");
 
