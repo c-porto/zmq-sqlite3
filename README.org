@@ -12,8 +12,8 @@ Running the server is done by the following shell commands:
 
 #+begin_src bash
 
-git clone --recursive-submodules https://github.com/c-porto/zmq-sqlite3.git 
-cd server && docker compose up --build -d
+git clone --recursive https://github.com/c-porto/zmq-sqlite3.git 
+cd zmq-sqlite3/server && docker compose up --build -d
 
 #+end_src
 
