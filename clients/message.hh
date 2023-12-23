@@ -35,7 +35,7 @@ enum class DeserializeErr : uint8_t {
 };
 
 class Message final {
- public:
+public:
   Message(){};
   Message(TestType t, TestResult r, float value)
       : type_{t}, result_{r}, value_{value} {}
@@ -53,6 +53,7 @@ class Message final {
   static Message deserialize(zmq::message_t &pkt) {
     Message msg;
     std::string __pkt = pkt.to_string();
+    std::cout << __pkt << '\n';
     auto to_string = [](auto &&r) -> std::string {
       const auto data = &*r.begin();
       const auto size = static_cast<std::size_t>(std::ranges::distance(r));
@@ -105,7 +106,7 @@ class Message final {
     return msg;
   }
 
- private:
+private:
   TestType type_{TestType::kEmpty};
   TestResult result_{TestResult::kEmpty};
   float value_{0.0f};
@@ -113,5 +114,5 @@ class Message final {
   std::optional<std::string> test_type_str_;
   std::optional<std::string> test_result_str_;
 };
-}  // namespace message
+} // namespace message
 #endif

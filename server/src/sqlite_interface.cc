@@ -19,4 +19,4 @@ SqliteErr SqliteDb<std::vector<std::string>>::exec(
   }
   return SqliteErr::kOk;
 }
-} // namespace db
+}  // namespace db

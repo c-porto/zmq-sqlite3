@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  zmq:
+    build: .
+    ports:
+      - "42068:42068"
+    volumes:
+      - ./logs:/server/logs
+

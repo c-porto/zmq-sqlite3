@@ -1,0 +1,37 @@
+* Simple Project to learn about zmq socket library
+
+** Dependencies 
+   - Docker 
+   - Git
+   - gcc
+   - cmake
+     
+** Running the server 
+   
+Running the server is done by the following shell commands: 
+
+#+begin_src bash
+
+git clone --recursive-submodules https://github.com/c-porto/zmq-sqlite3.git 
+cd server && docker compose up --build -d
+
+#+end_src
+
+** Testing the server
+   
+To test the server is possible to use the client, to do that run the following commands from the root of the project:
+
+#+begin_src bash
+
+cd client 
+mkdir build && cd build
+cmake ..
+cmake --build . && ./zmqclient
+
+#+end_src
+
+** TODO's
+   
+- Adding docker to client
+- Saving logs in a sqlite3 database
+- Adding docker compose in the project's root

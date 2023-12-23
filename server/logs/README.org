@@ -1,0 +1,9 @@
+* Logs directory
+  
+Basically this directory is used for log storing, it mounts to inside the docker container, once the server receives 
+new valid messages it will store the parsed contents to the msg.log inside the this folder, if the file doesn't exist
+the server will create it.
+
+
+
+

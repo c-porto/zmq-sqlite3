@@ -1,10 +1,11 @@
 #ifndef SQLITE_INTERFACE_H_
 #define SQLITE_INTERFACE_H_
 
+#include <sqlite3.h>
+
 #include <filesystem>
 #include <iostream>
 #include <memory>
-#include <sqlite3.h>
 #include <unordered_map>
 #include <vector>
 
@@ -25,8 +26,9 @@ enum class SqliteErr {
 
 using callback_fn = int (*)(void *, int, char **, char **);
 
-template <typename ContainerType> class SqliteDb final {
-public:
+template <typename ContainerType>
+class SqliteDb final {
+ public:
   SqliteDb(std::string &, std::string &);
   ~SqliteDb() { sqlite3_close(db_); };
   SqliteDb(SqliteDb &&) = delete;
@@ -36,7 +38,7 @@ public:
   SqliteErr exec(SqlOp, std::string, ContainerType *);
   SqliteErr &err() { return err_type_; };
 
-private:
+ private:
   inline std::unordered_map<SqlOp, callback_fn> &&generate_callback_map();
   sqlite3 *db_;
   std::string path_;
@@ -67,5 +69,5 @@ SqliteDb<ContainerType>::generate_callback_map() {
   // TODO
   return {};
 }
-} // namespace db
-#endif // !DEBUG
+}  // namespace db
+#endif  // !DEBUG

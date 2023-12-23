@@ -9,7 +9,7 @@ RUN apt-get update \
     make \
     cmake \
     git \
-    sqlite3
+    libsqlite3-dev 
 
 WORKDIR /server
 

@@ -12,7 +12,7 @@ project(${this} CXX)
 file(GLOB SRC_FILES *.cc)
 
 add_executable(${this} ${SRC_FILES})
-add_compile_options(-Wall -Wpedantic -O3 -stdlib=libc++)
+add_compile_options(-Wall -Wpedantic -O3)
 
 target_include_directories(${this} INTERFACE ${CMAKE_SOURCE_DIR})
 
